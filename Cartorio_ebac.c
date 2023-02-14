@@ -120,51 +120,65 @@ int main()
 {
 	int opcao=0; //Definindo as variaveis.
 	int laco=1;
+	char senhadigitada[]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;)//instruções de repetições
+	printf("### Cartório da EBAC ###\n\n");
+	printf("Login de adminstrador!\n\nDigite a sua senha:");
+	scanf("%s",senhadigitada);
+	
+	comparacao = strcmp(senhadigitada,"admin");
+	
+	if(comparacao == 0)
 	{
-		system("cls");//responsavel por limpar a tela.
-		
-		setlocale(LC_ALL, "Portuguese"); //Definido as linguagem.
+		system ("cls");
 	
-		printf( "##### Cartório da EBAC #####\n\n"); // inico do menu.
-		printf("Escolha a opção desejada no menu:\n\n");
-		printf("\t1 - Registrar nomes\n");
-		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n\n");
-		printf("\t4 - Sair do sistema\n\n");
-		printf("opcao: "); // Final do menu.
-	
-		scanf ("%d", &opcao); //Armazenando a escolha do usuário.
-	
-		system ("cls");//responsavel por limpar a tela.
-		
-		switch(opcao)//inicio da seleção no menu
+		for(laco=1;laco=1;)//instruções de repetições
 		{
-			case 1:// iniciar se for essa opção.
-			registro();//chamada de funções 
-			break;//não prossegue se não for essa opção.
-			
-			case 2:
-			consulta();
-			break;
-			
-			case 3:
-		 	delatar();
-			break;
-			
-			case 4:
-			printf("Obrigado por utilizar o sistema!\n");
-			return 0;
-			break;
-			
-			default://se não for nenhuma das opções.
-			printf("Essa opção não está disponivel!\n");
-			system ("pause");//messagem fixa até usuário decidir.
-			break;//não prossegue se não for essa opção.
-			//fim da seleção do menu.
-		}
+		
+			setlocale(LC_ALL,"Portuguese"); //Definido as linguagem.
 	
+			printf( "##### Cartório da EBAC #####\n\n"); // inico do menu.
+			printf("Escolha a opção desejada no menu:\n\n");
+			printf("\t1 - Registrar nomes\n");
+			printf("\t2 - Consultar nomes\n");
+			printf("\t3 - Deletar nomes\n\n");
+			printf("\t4 - Sair do sistema\n\n");
+			printf("opcao: "); // Final do menu.
+	
+			scanf ("%d", &opcao); //Armazenando a escolha do usuário.
+	
+			system ("cls");//responsavel por limpar a tela.
+		
+			switch(opcao)//inicio da seleção no menu
+			{
+				case 1:// iniciar se for essa opção.
+				registro();//chamada de funções 
+				break;//não prossegue se não for essa opção.
+			
+				case 2:
+				consulta();
+				break;
+			
+				case 3:
+		 		delatar();
+				break;
+			
+				case 4:
+				printf("Obrigado por utilizar o sistema!\n");
+				return 0;
+				break;
+			
+				default://se não for nenhuma das opções.
+				printf("Essa opção não está disponivel!\n");
+				system ("pause");//messagem fixa até usuário decidir.
+				break;//não prossegue se não for essa opção.
+				//fim da seleção do menu.
+			}
+		}	
 	}  		
 	
+	else
+		printf("Senha incorreta!");	
+			
 }
