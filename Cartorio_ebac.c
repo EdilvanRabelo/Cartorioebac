@@ -3,6 +3,7 @@
 #include <locale.h> //biblioteca de alocação de texto por região
 #include <string.h> //biblioteca responsável por cuidar das string
 
+
 int registro()//Função responsavel por cadastrar os usuários do sitema
 {
 	setlocale(LC_ALL, "Portuguese"); //Definido as linguagem.
@@ -113,8 +114,21 @@ int delatar()//Função responsavel por deletar os usuários do sitema
 		printf("O usuário foi deletado com sucesso ou encontrado no sistema!\n");
 		system ("pause");//messagem fixa até usuário decidir.
 	}
+	else
+	{
+		fclose(file);
+		remove(cpf);
+		FILE *file;	
+		file = fopen(cpf,"r");
+		if(file == NULL)
+		{
+			printf("O usuário foi deletado com sucesso ou encontrado no sistema!\n");
+			system ("pause");//messagem fixa até usuário decidir.
+		}
+	}
+	fclose(file);
+		
 }
-
 
 int main()
 {
@@ -135,7 +149,8 @@ int main()
 	
 		for(laco=1;laco=1;)//instruções de repetições
 		{
-		
+			system ("cls"); 
+			
 			setlocale(LC_ALL,"Portuguese"); //Definido as linguagem.
 	
 			printf( "##### Cartório da EBAC #####\n\n"); // inico do menu.
